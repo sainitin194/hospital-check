@@ -1,15 +1,15 @@
 {
   "rewrites": [
     {
-      "source": "/hospital-service/:path*",
+      "source": "/hospital/:path*",
       "destination": "http://56.228.62.37:3434/api/hospital/:path*"
     },
     {
-      "source": "/patient-service/:path*",
+      "source": "/patient/:path*",
       "destination": "http://56.228.62.37:3434/api/patient/:path*"
     },
     {
-      "source": "/insurance-service/:path*",
+      "source": "/insuranceComp/:path*",
       "destination": "http://56.228.62.37:3434/api/insuranceComp/:path*"
     }
   ]
