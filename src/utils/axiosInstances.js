@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// Axios instance for Hospital-related endpoints
+// ✅ Axios instance for Hospital-related endpoints
 const hospitalInstance = axios.create({
-  baseURL: 'http://56.228.62.37:3434/api/hospital/',
+  baseURL: '/hospital-service/api/hospital/',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -19,9 +19,9 @@ hospitalInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Axios instance for Patient-related endpoints
+// ✅ Axios instance for Patient-related endpoints
 const patientInstance = axios.create({
-  baseURL: 'http://56.228.62.37:3434/api/patient/',
+  baseURL: '/hospital-service/api/patient/',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -38,9 +38,9 @@ patientInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Axios instance for Insurance Company-related endpoints
+// ✅ Axios instance for Insurance Company-related endpoints
 const insuranceInstance = axios.create({
-  baseURL: 'http://56.228.62.37:3434/api/insuranceComp/',
+  baseURL: '/hospital-service/api/insuranceComp/',
   headers: {
     'Content-Type': 'application/json'
   }
