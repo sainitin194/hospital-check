@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/hospital-service/:path*",
+      "destination": "http://56.228.62.37:3434/hospital-service/:path*"
+    }
+  ]
+}
