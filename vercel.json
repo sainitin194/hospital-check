@@ -2,7 +2,15 @@
   "rewrites": [
     {
       "source": "/hospital-service/:path*",
-      "destination": "http://56.228.62.37:3434/hospital-service/:path*"
+      "destination": "http://56.228.62.37:3434/api/hospital/:path*"
+    },
+    {
+      "source": "/patient-service/:path*",
+      "destination": "http://56.228.62.37:3434/api/patient/:path*"
+    },
+    {
+      "source": "/insurance-service/:path*",
+      "destination": "http://56.228.62.37:3434/api/insuranceComp/:path*"
     }
   ]
 }
