@@ -13,33 +13,33 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    let apiUrl = '';
-    let requestData = {};
+  let apiUrl = '';
+  let requestData = {};
 
-   if (data.role === 'Hospital') {
-  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/hospital/signup`;
-  requestData = {
-    hospitalName: data.hospitalName,
-    hospitalEmail: data.email,
-   hospitalPwd: data.password
-  };
-} else if (data.role === 'Patient') {
-  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/patient/signup`;
-  requestData = data;
-} else if (data.role === 'Insurance Company') {
-  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/insuranceComp/signup`;
-  requestData = data;
-}
+  if (data.role === 'Hospital') {
+    apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/hospital/signup`;
+    requestData = {
+      hospitalName: data.hospitalName,
+      hospitalEmail: data.email,
+      hospitalPwd: data.password
+    };
+  } else if (data.role === 'Patient') {
+    apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/patient/signup`;
+    requestData = data;
+  } else if (data.role === 'Insurance Company') {
+    apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/insuranceComp/signup`;
+    requestData = data;
+  }
 
-
-    try {
-      await axios.post(apiUrl, requestData);
-      toast.success('Registration successful!');
-    } catch (error) {
-      console.error('Registration error:', error);
-      toast.error('Registration failed. Please try again.');
-    }
-  };
+  try {
+    const response = await axios.post(apiUrl, requestData);
+    console.log('Signup success:', response.data);
+    toast.success(response.data.msg || 'Registration successful!');
+  } catch (error) {
+    console.error('Signup failed:', error);
+    toast.error('Signup failed: ' + (error.response?.data?.msg || error.message));
+  }
+};
 
   return (
     <Container className="mt-4">
