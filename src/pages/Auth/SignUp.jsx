@@ -21,7 +21,7 @@ const SignUp = () => {
   requestData = {
     hospitalName: data.hospitalName,
     hospitalEmail: data.email,
-    hospitalPassword: data.password
+   hospitalPwd: data.password
   };
 } else if (data.role === 'Patient') {
   apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/patient/signup`;
