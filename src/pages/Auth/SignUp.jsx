@@ -17,19 +17,20 @@ const SignUp = () => {
     let requestData = {};
 
    if (data.role === 'Hospital') {
-  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/hospital/signup`;
+  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/hospital/signup`;
   requestData = {
     hospitalName: data.hospitalName,
     hospitalEmail: data.email,
     hospitalPassword: data.password
   };
 } else if (data.role === 'Patient') {
-  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/patient/signup`;
+  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/patient/signup`;
   requestData = data;
 } else if (data.role === 'Insurance Company') {
-  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/insuranceComp/signup`;
+  apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/insuranceComp/signup`;
   requestData = data;
 }
+
 
     try {
       await axios.post(apiUrl, requestData);
